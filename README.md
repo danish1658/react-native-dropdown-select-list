@@ -30,6 +30,11 @@ Light weight and blazing fast dropdown menu picker.
 
 # Usage
 ```jsx
+yarn add react-native-dropdown-select-list
+```
+
+# Usage
+```jsx
 import SelectList from 'react-native-dropdown-select-list'
 
 const App = () => {
