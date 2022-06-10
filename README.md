@@ -8,13 +8,15 @@
 
 ☝️ React Native Select List Equivalent to Html's  Select with options --"
 
-[![Version][version-badge]][package]
-[![Downloads][downloads-badge]][npmtrends]
-[![Build Status][build-badge]][build]
-[![Code Coverage][coverage-badge]][coverage]
-
-[![Watch on GitHub][github-watch-badge]][github-watch]
-[![Star on GitHub][github-star-badge]][github-star]
-[![Tweet][twitter-badge]][twitter]
-
 </div>
+
+<p align="center" >
+  <kbd>
+    <img
+      src="https://raw.githubusercontent.com/danish1658/react-native-dropdown-select-list/main/assets/images/demo.gif"
+      title="List Demo"
+    >
+  </kbd>
+  <br>
+  <em>React Native Dropdown Select List Demo.</em>
+</p>
