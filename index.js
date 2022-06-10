@@ -84,6 +84,8 @@ const SelectList = ({setSelected,placeholder,boxStyles,inputStyles,dropdownStyle
                         <ScrollView style={[styles.dropdown,dropdownStyles]} contentContainerStyle={{paddingVertical:10,}} nestedScrollEnabled={true}>
 
                             {
+                                (filtereddata.length >=  1)
+                                ?
                                 filtereddata.map((item,index) => {
                                     let key = item.key ?? item.value ?? item;
                                     let value = item.value ?? item;
@@ -92,11 +94,23 @@ const SelectList = ({setSelected,placeholder,boxStyles,inputStyles,dropdownStyle
                                             setSelected(key)
                                             setSelectedVal(value)
                                             slideup()
+                                            setTimeout(() => setFilteredData(data), 800)
+                                            
                                         }}>
                                             <Text style={dropdownTextStyles}>{value}</Text>
                                         </TouchableOpacity>
                                     )
                                 })
+                                :
+                                <TouchableOpacity style={[styles.option,dropdownItemStyles]} onPress={ () => {
+                                    setSelected("")
+                                    setSelectedVal("")
+                                    slideup()
+                                    setTimeout(() => setFilteredData(data), 800)
+                                    
+                                }}>
+                                    <Text style={dropdownTextStyles}> No data found</Text>
+                                </TouchableOpacity>
                             }
                             
                             
