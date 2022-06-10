@@ -28,7 +28,7 @@ Light weight and blazing fast dropdown menu picker.
 -   Change Font Family Easily which native picker lacks.
 -   10 Seconds Setup
 
-# Usage
+# Installation
 ```jsx
 yarn add react-native-dropdown-select-list
 ```
