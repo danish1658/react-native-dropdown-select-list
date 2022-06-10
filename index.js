@@ -54,9 +54,9 @@ const SelectList = ({setSelected,placeholder,boxStyles,inputStyles,dropdownStyle
                                 placeholder='search'
                                 onChangeText={(val) => {
                                     let result =  data.filter((item) => {
-                                        toSearch = val.toLowerCase();
-                                        row = item.value.toLowerCase()
-                                        return row.search(toSearch) > -1;
+                                        val.toLowerCase();
+                                        let row = item.value.toLowerCase()
+                                        return row.search(val.toLowerCase()) > -1;
                                     });
                                     setFilteredData(result)
                                 }}
