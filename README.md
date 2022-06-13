@@ -66,4 +66,5 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 | setSelected| String | Selected option value which will be stored in your local state
 
 # Watch Video
-[![Watch the video](https://i.imgur.com/9CVX16L.png)](https://www.youtube.com/watch?v=J9raEY-1KPQ&t=499s)
+
+[![Watch the video](https://i.imgur.com/K8Lt2h4.png)](https://www.youtube.com/watch?v=J9raEY-1KPQ&t=499s)
