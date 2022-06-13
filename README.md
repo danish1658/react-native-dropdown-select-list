@@ -64,3 +64,6 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 | maxHeight| Number | Maximum height of the dropdown wrapper to occupy
 | data| array[object]| Data which will be iterated as options of select list
 | setSelected| String | Selected option value which will be stored in your local state
+
+# Watch Video
+[![Watch the video](https://i.imgur.com/9CVX16L.png)](https://www.youtube.com/watch?v=J9raEY-1KPQ&t=499s)
