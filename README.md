@@ -13,7 +13,7 @@
 <p align="center" >
   <kbd>
     <img
-      src="https://raw.githubusercontent.com/danish1658/react-native-dropdown-select-list/main/assets/images/demo.gif"
+      src="https://i.imgur.com/JM9fFbH.gif"
       title="List Demo"
     >
   </kbd>
