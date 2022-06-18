@@ -6,7 +6,7 @@
 
 <div align="center">
 
-☝️ React Native Select List Equivalent to Html's  Select with options --"
+👌🏽 React Native Select List Equivalent to Html's  Select with options --"
 
 </div>
 
@@ -28,12 +28,28 @@ Light weight and blazing fast dropdown menu picker.
 -   Change Font Family Easily which native picker lacks.
 -   10 Seconds Setup
 
-# Installation
-```jsx
-yarn add react-native-dropdown-select-list
+# Compatibility
+
+|  iOS  | Android | Web | Expo |
+--------|---------|-----|------|
+|  ✅  |  ✅  |  ✅  |  ✅  |
+
+
+# 🔌 Installation
+
+```sh
+$ npm install react-native-dropdown-select-list
+
 ```
 
-# Usage
+OR
+
+```sh
+$ yarn add react-native-dropdown-select-list
+```
+
+
+# 😎 Usage
 ```jsx
 import SelectList from 'react-native-dropdown-select-list'
 
@@ -52,7 +68,7 @@ const App = () => {
 
 For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-dropdown-select-list)
 
-# Props
+# ⭐ Props
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | placeholder | String | Placeholder text that will be displayed in the select box
@@ -65,6 +81,11 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 | data| array[object]| Data which will be iterated as options of select list
 | setSelected| String | Selected option value which will be stored in your local state
 
-# Watch Video
+# ▶️ Watch Video
 
 [![Watch the video](https://i.imgur.com/K8Lt2h4.png)](https://www.youtube.com/watch?v=J9raEY-1KPQ&t=499s)
+
+# ▶️ Would you like to support me?
+
+If you would like me come up with similar packages, buy me a cup of coffee to boost my energy.
+[![Paypal](https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png)](https://paypal.me/danishamindar)
