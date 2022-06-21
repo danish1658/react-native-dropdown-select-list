@@ -85,7 +85,32 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 | maxHeight| Number | Maximum height of the dropdown wrapper to occupy
 | data| array[object]| Data which will be iterated as options of select list
 | setSelected| String | Selected option value which will be stored in your local state
+| searchicon| JSX Element | Pass any JSX to this prop like Text, Image or Icon to show instead of search icon
+| arrowicon| JSX Element | Pass any JSX to this prop like Text, Image or Icon to show instead of chevron icon
 
+
+# 😎 Advanced Usage
+```jsx
+import SelectList from 'react-native-dropdown-select-list'
+
+const App = () => {
+
+  const [selected, setSelected] = React.useState("");
+  
+  const data = ['Jammu & Kashmir', 'Gujrat', 'West Bengal', 'Tamil Nadu'];
+
+  return(
+    <SelectList 
+      setSelected={setSelected} 
+      data={data}  
+      arrowicon={<FontAwesome name="chevron-down" size={12} color={'black'} />}  //pass any JSX.Elemet
+      searchicon={<FontAwesome name="search" size={12} color={'black'} />} //pass any JSX.Element
+      boxStyles={{borderRadius:0}} //Pass any styles to override defaults
+    />
+  )
+
+};
+```
 
 
 # ▶️ Watch Video
