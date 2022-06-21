@@ -28,11 +28,16 @@
 -   Change Font Family Easily which community picker lacks.
 -   Zero dependencies
 
+
+
 # Compatibility
+
 
 |  iOS  | Android | Web | Expo |
 --------|---------|-----|------|
 |  ✅  |    ✅    | ✅ |  ✅  |
+
+
 
 
 # 🔌 Installation
@@ -80,6 +85,8 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 | maxHeight| Number | Maximum height of the dropdown wrapper to occupy
 | data| array[object]| Data which will be iterated as options of select list
 | setSelected| String | Selected option value which will be stored in your local state
+
+
 
 # ▶️ Watch Video
 

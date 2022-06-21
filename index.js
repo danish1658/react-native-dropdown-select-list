@@ -2,7 +2,19 @@ import React from 'react';
 import {View,Text,StyleSheet,Image, TouchableOpacity, ScrollView, Animated,TextInput} from 'react-native';
 
 
-const SelectList = ({setSelected,placeholder,boxStyles,inputStyles,dropdownStyles,dropdownItemStyles,dropdownTextStyles,maxHeight,data}) => {
+const SelectList = ({
+        setSelected,
+        placeholder,
+        boxStyles,
+        inputStyles,
+        dropdownStyles,
+        dropdownItemStyles,
+        dropdownTextStyles,
+        maxHeight,
+        data,
+        searchicon = false,
+        arrowicon = false
+    }) => {
 
 
 
@@ -44,12 +56,19 @@ const SelectList = ({setSelected,placeholder,boxStyles,inputStyles,dropdownStyle
                 (dropdown)
                 ?
                     <View style={[styles.wrapper,boxStyles]}>
-                        <View style={{flexDirection:'row'}}> 
-                            <Image 
-                                source={require('./assets/images/search.png')}
-                                resizeMode='contain'
-                                style={{width:20,height:20,marginRight:7}}
-                            />
+                        <View style={{flexDirection:'row',alignItems:'center'}}> 
+                            {
+                                (!searchicon)
+                                ?
+                                <Image 
+                                    source={require('./assets/images/search.png')}
+                                    resizeMode='contain'
+                                    style={{width:20,height:20,marginRight:7}}
+                                />
+                                :
+                                searchicon
+                            }
+                            
                             <TextInput 
                                 placeholder='search'
                                 onChangeText={(val) => {
@@ -69,11 +88,18 @@ const SelectList = ({setSelected,placeholder,boxStyles,inputStyles,dropdownStyle
                 :
                     <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => slidedown()}>
                         <Text style={inputStyles}>{ (selectedval == "") ? (placeholder) ? placeholder : 'Select option' : selectedval  }</Text>
-                        <Image 
-                            source={require('./assets/images/chevron.png')}
-                            resizeMode='contain'
-                            style={{width:20,height:20}}
-                        />
+                        {
+                            (!arrowicon)
+                            ?
+                                <Image 
+                                    source={require('./assets/images/chevron.png')}
+                                    resizeMode='contain'
+                                    style={{width:20,height:20}}
+                                />
+                            :
+                                arrowicon
+                        }
+                        
                     </TouchableOpacity>
             }
             
