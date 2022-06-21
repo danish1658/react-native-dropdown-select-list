@@ -103,9 +103,9 @@ const App = () => {
     <SelectList 
       setSelected={setSelected} 
       data={data}  
-      arrowicon={<FontAwesome name="chevron-down" size={12} color={'black'} />}  //pass any JSX.Elemet
-      searchicon={<FontAwesome name="search" size={12} color={'black'} />} //pass any JSX.Element
-      boxStyles={{borderRadius:0}} //Pass any styles to override defaults
+      arrowicon={<FontAwesome name="chevron-down" size={12} color={'black'} />} 
+      searchicon={<FontAwesome name="search" size={12} color={'black'} />} 
+      boxStyles={{borderRadius:0}} //override default styles
     />
   )
 
