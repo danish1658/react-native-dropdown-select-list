@@ -13,7 +13,8 @@ const SelectList = ({
         maxHeight,
         data,
         searchicon = false,
-        arrowicon = false
+        arrowicon = false,
+        search = false
     }) => {
 
 
@@ -53,7 +54,7 @@ const SelectList = ({
     return(
         <View>
             {
-                (dropdown)
+                (dropdown && search)
                 ?
                     <View style={[styles.wrapper,boxStyles]}>
                         <View style={{flexDirection:'row',alignItems:'center'}}> 
@@ -86,7 +87,7 @@ const SelectList = ({
                         
                     </View>
                 :
-                    <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => slidedown()}>
+                    <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => { if(!dropdown){ slidedown() }else{ slideup() } }}>
                         <Text style={inputStyles}>{ (selectedval == "") ? (placeholder) ? placeholder : 'Select option' : selectedval  }</Text>
                         {
                             (!arrowicon)
