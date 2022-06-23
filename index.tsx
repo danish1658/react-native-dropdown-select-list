@@ -1,14 +1,99 @@
-import React from 'react';
-import {View,Text,StyleSheet,Image, TouchableOpacity, ScrollView, Animated,TextInput} from 'react-native';
+import React,{JSXElementConstructor} from 'react';
+import {
+    View,
+    Text,
+    StyleSheet,
+    Image,
+    TouchableOpacity,
+    ScrollView,
+    Animated,
+    TextInput,
+    ViewStyle} from 'react-native';
+
+interface SelectListProps  {
+    /**
+    * Fn to set Selected option value which will be stored in your local state
+    */
+    setSelected: React.Dispatch<React.SetStateAction<undefined>>,
+
+    /**
+    * Placeholder text that will be displayed in the select box
+    */
+    placeholder?: string,
+
+    /**
+    * Additional styles for select box
+    */
+    boxStyles?: ViewStyle,
+
+    /**
+    *  	Additional styles for text of select box
+    */
+    inputStyles?: ViewStyle,
+
+    /**
+    *  	Additional styles for dropdown scrollview
+    */
+    dropdownStyles?:ViewStyle,
+
+    /**
+    *  Additional styles for dropdown list item
+    */
+    dropdownItemStyles?: ViewStyle,
+
+    /**
+    * Additional styles for list items text
+    */
+    dropdownTextStyles?: ViewStyle,
+
+    /**
+    * Maximum height of the dropdown wrapper to occupy
+    */
+    maxHeight?: number,
+
+    /**
+    * Data which will be iterated as options of select list
+    */
+    data: Array<{}>,
+
+    /**
+    * Pass any JSX to this prop like Text, Image or Icon to show instead of search icon
+    */
+    searchicon?: JSX.Element,
+
+    /**
+    *  Pass any JSX to this prop like Text, Image or Icon to show instead of chevron icon
+    */
+    arrowicon?: JSX.Element,
+
+    /**
+    * set to false if you dont want to use search functionality
+    */
+    search?: boolean
 
 
-const SelectList = ({setSelected,placeholder,boxStyles,inputStyles,dropdownStyles,dropdownItemStyles,dropdownTextStyles,maxHeight,data}) => {
+}
+
+const SelectList: React.FC<SelectListProps> = ({
+        setSelected,
+        placeholder,
+        boxStyles,
+        inputStyles,
+        dropdownStyles,
+        dropdownItemStyles,
+        dropdownTextStyles,
+        maxHeight,
+        data,
+        searchicon = false,
+        arrowicon = false,
+        search = true
+    }) => {
 
 
 
-    const [dropdown, setDropdown] = React.useState(false);
-    const [selectedval, setSelectedVal] = React.useState("");
-    const [height,setHeight] = React.useState(200)
+    const [dropdown, setDropdown] = React.useState<boolean>(false);
+    const [selectedval, setSelectedVal] = React.useState<any>("");
+    const [height,setHeight] = React.useState<number>(200)
     const animatedvalue = React.useRef(new Animated.Value(0)).current;
     const [filtereddata,setFilteredData] = React.useState(data)
 
@@ -41,15 +126,22 @@ const SelectList = ({setSelected,placeholder,boxStyles,inputStyles,dropdownStyle
     return(
         <View>
             {
-                (dropdown)
+                (dropdown && search)
                 ?
                     <View style={[styles.wrapper,boxStyles]}>
-                        <View style={{flexDirection:'row'}}> 
-                            <Image 
-                                source={require('./assets/images/search.png')}
-                                resizeMode='contain'
-                                style={{width:20,height:20,marginRight:7}}
-                            />
+                        <View style={{flexDirection:'row',alignItems:'center'}}> 
+                            {
+                                (!searchicon)
+                                ?
+                                <Image 
+                                    source={require('./assets/images/search.png')}
+                                    resizeMode='contain'
+                                    style={{width:20,height:20,marginRight:7}}
+                                />
+                                :
+                                searchicon
+                            }
+                            
                             <TextInput 
                                 placeholder='search'
                                 onChangeText={(val) => {
@@ -67,13 +159,20 @@ const SelectList = ({setSelected,placeholder,boxStyles,inputStyles,dropdownStyle
                         
                     </View>
                 :
-                    <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => slidedown()}>
+                    <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => { if(!dropdown){ slidedown() }else{ slideup() } }}>
                         <Text style={inputStyles}>{ (selectedval == "") ? (placeholder) ? placeholder : 'Select option' : selectedval  }</Text>
-                        <Image 
-                            source={require('./assets/images/chevron.png')}
-                            resizeMode='contain'
-                            style={{width:20,height:20}}
-                        />
+                        {
+                            (!arrowicon)
+                            ?
+                                <Image 
+                                    source={require('./assets/images/chevron.png')}
+                                    resizeMode='contain'
+                                    style={{width:20,height:20}}
+                                />
+                            :
+                                arrowicon
+                        }
+                        
                     </TouchableOpacity>
             }
             

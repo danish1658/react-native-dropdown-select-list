@@ -2,7 +2,7 @@
   "name": "react-native-dropdown-select-list",
   "version": "1.0.7",
   "description": "⭐ React Native Select List Equivalent to Html's Select with options\"",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,7 @@
     "dropdown",
     "android",
     "ios",
-    "select list",
+    "selectlist",
     "searchable",
     "list",
     "dropdown-picker",
