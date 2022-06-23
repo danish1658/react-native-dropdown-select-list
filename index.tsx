@@ -72,9 +72,13 @@ interface SelectListProps  {
     search?: boolean
 
 
+<<<<<<< HEAD:index.tsx
 }
 
 const SelectList: React.FC<SelectListProps> = ({
+=======
+const SelectList = ({
+>>>>>>> 88211670bc02d1ffbf6b18368451a52b5cf43054:index.js
         setSelected,
         placeholder,
         boxStyles,
@@ -86,7 +90,11 @@ const SelectList: React.FC<SelectListProps> = ({
         data,
         searchicon = false,
         arrowicon = false,
+<<<<<<< HEAD:index.tsx
         search = true
+=======
+        search = false
+>>>>>>> 88211670bc02d1ffbf6b18368451a52b5cf43054:index.js
     }) => {
 
 
