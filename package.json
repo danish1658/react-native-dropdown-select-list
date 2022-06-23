@@ -3,6 +3,7 @@
   "version": "1.0.12",
   "description": "⭐ React Native Select List Equivalent to Html's Select with options\"",
   "main": "index.tsx",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
