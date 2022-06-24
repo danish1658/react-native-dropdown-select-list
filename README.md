@@ -93,6 +93,7 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 
 # 😎 Advanced Usage
 ```jsx
+
 import SelectList from 'react-native-dropdown-select-list'
 
 const App = () => {
@@ -108,11 +109,18 @@ const App = () => {
       arrowicon={<FontAwesome name="chevron-down" size={12} color={'black'} />} 
       searchicon={<FontAwesome name="search" size={12} color={'black'} />} 
       search={false} 
-      boxStyles={{borderRadius:0}} //override default styles
+      boxStyles={styles.box} //override default styles
     />
   )
 
 };
+
+const styles = StyleSheet.create({
+  box:{
+    backgroundColor:'blue'
+  }
+});
+
 ```
 
 
