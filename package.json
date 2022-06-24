@@ -28,7 +28,9 @@
     "selectlist",
     "expo",
     "easy",
-    "menu"
+    "menu",
+    "tag",
+    "chooser"
   ],
   "author": "Danish Amin Dar",
   "license": "MIT",
