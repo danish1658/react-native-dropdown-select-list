@@ -62,8 +62,12 @@ const App = () => {
 
   const [selected, setSelected] = React.useState("");
   
-  const data = [{key:'Jammu & Kashmir',value:'Jammu & Kashmir'}];
-  // You can also pass data in array ['Jammu & Kashmir', 'Gujrat', 'West Bengal', 'Tamil Nadu'];
+  const data = [
+    {key:'1',value:'Jammu & Kashmir'},
+    {key:'2',value:'Himachal Pradesh'},
+    {key:'3',value:'West Bengal'},
+  ];
+
 
   return(
     <SelectList setSelected={setSelected} data={data} />
@@ -85,7 +89,7 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 | dropdownItemStyles| Object| Additional styles for dropdown list item
 | dropdownTextStyles| Object| Additional styles for list items text
 | maxHeight| Number | Maximum height of the dropdown wrapper to occupy
-| data| array or array[object]| Data which will be iterated as options of select list
+| data| array[object]| Data which will be iterated as options of select list
 | setSelected| String | Selected option value which will be stored in your local state
 | searchicon| JSX Element | Pass any JSX to this prop like Text, Image or Icon to show instead of search icon
 | arrowicon| JSX Element | Pass any JSX to this prop like Text, Image or Icon to show instead of chevron icon
@@ -100,7 +104,11 @@ const App = () => {
 
   const [selected, setSelected] = React.useState("");
   
-  const data = ['Jammu & Kashmir', 'Gujrat', 'West Bengal', 'Tamil Nadu'];
+  const data = [
+    {key:'1',value:'Jammu & Kashmir'},
+    {key:'2',value:'Himachal Pradesh'},
+    {key:'3',value:'West Bengal'},
+  ];
 
   return(
     <SelectList 
