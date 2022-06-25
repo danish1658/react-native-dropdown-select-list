@@ -1,6 +1,6 @@
 {
   "name": "react-native-dropdown-select-list",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "⭐ React Native Select List Equivalent to Html's Select with options\"",
   "main": "index.tsx",
   "types": "index.d.ts",
