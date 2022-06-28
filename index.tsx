@@ -71,6 +71,10 @@ interface SelectListProps  {
     */
     search?: boolean
 
+    /**
+    * Trigger an action when option is selected
+    */
+    onSelect?: () => void 
 
 }
 
@@ -86,7 +90,8 @@ const SelectList: React.FC<SelectListProps> = ({
         data,
         searchicon = false,
         arrowicon = false,
-        search = true
+        search = true,
+        onSelect = () => {},
     }) => {
 
 
@@ -192,6 +197,7 @@ const SelectList: React.FC<SelectListProps> = ({
                                         <TouchableOpacity style={[styles.option,dropdownItemStyles]} key={index} onPress={ () => {
                                             setSelected(key)
                                             setSelectedVal(value)
+                                            onSelect()
                                             slideup()
                                             setTimeout(() => setFilteredData(data), 800)
                                             

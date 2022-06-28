@@ -62,12 +62,7 @@ const App = () => {
 
   const [selected, setSelected] = React.useState("");
   
-  const data = [
-    {key:'1',value:'Jammu & Kashmir'},
-    {key:'2',value:'Himachal Pradesh'},
-    {key:'3',value:'West Bengal'},
-  ];
-
+  const data = [{key:'1',value:'Jammu & Kashmir'}];
 
   return(
     <SelectList setSelected={setSelected} data={data} />
@@ -81,6 +76,7 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 # ⭐ Props
 | Name | Type | Description |
 | ---- | ---- | ----------- |
+| onSelect| Function | Pass any function that you want to trigger immediately after a value is selected
 | placeholder | String | Placeholder text that will be displayed in the select box
 | search | boolean | set to false if you dont want to use search functionality
 | boxStyles| Object| Additional styles for select box
@@ -89,15 +85,14 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 | dropdownItemStyles| Object| Additional styles for dropdown list item
 | dropdownTextStyles| Object| Additional styles for list items text
 | maxHeight| Number | Maximum height of the dropdown wrapper to occupy
-| data| array[object]| Data which will be iterated as options of select list
-| setSelected| String | Selected option value which will be stored in your local state
+| data| array or array[object]| Data which will be iterated as options of select list
+| setSelected| Function | For Setting the option value which will be stored in your local state
 | searchicon| JSX Element | Pass any JSX to this prop like Text, Image or Icon to show instead of search icon
 | arrowicon| JSX Element | Pass any JSX to this prop like Text, Image or Icon to show instead of chevron icon
 
 
 # 😎 Advanced Usage
 ```jsx
-
 import SelectList from 'react-native-dropdown-select-list'
 
 const App = () => {
@@ -106,32 +101,25 @@ const App = () => {
   
   const data = [
     {key:'1',value:'Jammu & Kashmir'},
-    {key:'2',value:'Himachal Pradesh'},
-    {key:'3',value:'West Bengal'},
+    {key:'2',value:'Gujrat'},
+    {key:'3',value:'Maharashtra'},
+    {key:'4',value:'Goa'},
   ];
 
   return(
     <SelectList 
+      onSelect={() => alert('selected')}
       setSelected={setSelected} 
       data={data}  
       arrowicon={<FontAwesome name="chevron-down" size={12} color={'black'} />} 
       searchicon={<FontAwesome name="search" size={12} color={'black'} />} 
       search={false} 
-      boxStyles={styles.box} //override default styles
+      boxStyles={{borderRadius:0}} //override default styles
     />
   )
 
 };
-
-const styles = StyleSheet.create({
-  box:{
-    backgroundColor:'blue'
-  }
-});
-
 ```
-
-
 
 
 # ▶️ Watch Video
