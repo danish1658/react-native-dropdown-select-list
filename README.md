@@ -122,6 +122,39 @@ const App = () => {
 ```
 
 
+# 😎 Getting Options From Database
+```jsx
+import SelectList from 'react-native-dropdown-select-list'
+
+const App = () => {
+
+  const [selected, setSelected] = React.useState("");
+  const [data,setData] = React.useState([]);
+  
+  React.useEffect(() => 
+    //Get Values from database
+    axios.get('https://jsonplaceholder.typicode.com/users')
+      .then((response) => {
+        // Store Values in Temporary Array
+        let newArray = response.data.map((item) => {
+          return {key: item.id, value: item.name}
+        })
+        //Set Data Variable
+        setData(newArray)
+      })
+      .catch((e) => {
+        console.log(e)
+      })
+  ,[])
+
+  return(
+    <SelectList setSelected={setSelected} data={data} />
+  )
+
+};
+```
+
+
 # ▶️ Watch Video
 
 [![Watch the video](https://i.imgur.com/K8Lt2h4.png)](https://www.youtube.com/watch?v=J9raEY-1KPQ&t=499s)

@@ -127,6 +127,9 @@ const SelectList: React.FC<SelectListProps> = ({
             setHeight(maxHeight)
     },[maxHeight])
 
+    React.useEffect(() => {
+        setFilteredData(data);
+      },[data])
 
     return(
         <View>
