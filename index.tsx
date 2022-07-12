@@ -95,7 +95,7 @@ const SelectList: React.FC<SelectListProps> = ({
     }) => {
 
 
-
+    const [_firstRender,_setFirstRender] = React.useState<boolean>(true);
     const [dropdown, setDropdown] = React.useState<boolean>(false);
     const [selectedval, setSelectedVal] = React.useState<any>("");
     const [height,setHeight] = React.useState<number>(200)
@@ -127,9 +127,20 @@ const SelectList: React.FC<SelectListProps> = ({
             setHeight(maxHeight)
     },[maxHeight])
 
+    
     React.useEffect(() => {
         setFilteredData(data);
       },[data])
+
+
+    React.useEffect(() => {
+        if(_firstRender){
+          _setFirstRender(false);
+          return;
+        }
+        onSelect()
+    },[selectedval])
+  
 
     return(
         <View>
@@ -200,7 +211,6 @@ const SelectList: React.FC<SelectListProps> = ({
                                         <TouchableOpacity style={[styles.option,dropdownItemStyles]} key={index} onPress={ () => {
                                             setSelected(key)
                                             setSelectedVal(value)
-                                            onSelect()
                                             slideup()
                                             setTimeout(() => setFilteredData(data), 800)
                                             

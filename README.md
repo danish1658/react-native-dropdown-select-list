@@ -65,7 +65,7 @@ const App = () => {
   const data = [{key:'1',value:'Jammu & Kashmir'}];
 
   return(
-    <SelectList setSelected={setSelected} data={data} />
+    <SelectList setSelected={setSelected} data={data} onSelect={() => alert(selected)} />
   )
 
 };
@@ -108,7 +108,7 @@ const App = () => {
 
   return(
     <SelectList 
-      onSelect={() => alert('selected')}
+      onSelect={() => alert(selected)}
       setSelected={setSelected} 
       data={data}  
       arrowicon={<FontAwesome name="chevron-down" size={12} color={'black'} />} 
@@ -148,7 +148,7 @@ const App = () => {
   ,[])
 
   return(
-    <SelectList setSelected={setSelected} data={data} />
+    <SelectList setSelected={setSelected} data={data} onSelect={() => alert(selected)} />
   )
 
 };
@@ -164,3 +164,5 @@ const App = () => {
 If you would like me come up with similar packages, buy me a cup of coffee to boost my energy.
 <br><br>
 [![Paypal](https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png)](https://paypal.me/danishamindar)
+<br><br>
+For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-dropdown-select-list)
