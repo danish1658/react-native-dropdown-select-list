@@ -34,6 +34,23 @@ Multiple Select List            |  Select List
 
 <br>
 
+# What's New in This Fork (changes made for selectList ONLY)
+
+This fork by **FearZaEngineer** is an edit of the original package and introduces key performance optimizations and improvements:
+
+- **Optimized Rendering with FlatList:**  
+  Replaces the ScrollView in the dropdown with a FlatList for virtualized rendering. This ensures that only visible items are rendered, improving performance with large data sets.
+- **New Prop: `flatListProps`:**  
+  Allows you to pass additional props directly to the underlying FlatList. This gives you full control over performance-related configurations (e.g., `initialNumToRender`, `maxToRenderPerBatch`, `windowSize`, etc.).
+- **Memoized Render Functions:**  
+  Uses `useCallback` and `useMemo` to memoize render functions and helper functions, reducing unnecessary re-renders.
+- **Enhanced Search Filtering:**  
+  Implements local state for search queries, ensuring smoother and more efficient filtering.
+- **Animation Improvements:**  
+  The slide-up/slide-down animations have been optimized to perform better during state changes.
+
+<br>
+
 # Compatibility
 
 <br>
@@ -48,14 +65,16 @@ Multiple Select List            |  Select List
 # 🔌 Installation
 
 ```sh
-$ npm install react-native-dropdown-select-list
+$ npm install react-native-dropdown-select-list@github:FearZaEngineer/react-native-dropdown-select-list#my-custom-selectlist
+
 
 ```
 
 OR
 
 ```sh
-$ yarn add react-native-dropdown-select-list
+$ yarn add react-native-dropdown-select-list@github:FearZaEngineer/react-native-dropdown-select-list#my-custom-selectlist
+
 ```
 
 <br>
@@ -148,6 +167,8 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 | fontFamily| string | Pass font name to apply globally on each text field of component
 | notFoundText| string | Pass your custom message if any search result returns empty
 | dropdownShown| boolean | Control your dropdown ( on & off ) state by changing its value to true or false
+| flatListProps|	object | NEW : Additional props for item List
+
 
 <br>
 
@@ -264,9 +285,7 @@ const App = () => {
 
 <br>
 
-# 💲 Would you like to support me?
-
-If you would like me come up with similar packages, buy me a cup of coffee to boost my energy.
+# 💲 Would you like to support the creator of the original package?
 <br><br>
 [![Paypal](https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png)](https://paypal.me/danishamindar)
 <br><br>
