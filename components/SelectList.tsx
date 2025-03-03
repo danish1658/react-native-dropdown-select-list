@@ -34,6 +34,7 @@ const SelectList: React.FC<SelectListProps> =  ({
         notFoundText = "No data found",
         disabledItemStyles,
         disabledTextStyles,
+        onSearch = () => {},
         onSelect = () => {},
         save = 'key',
         dropdownShown = false,
@@ -139,6 +140,7 @@ const SelectList: React.FC<SelectListProps> =  ({
                             <TextInput 
                                 placeholder={searchPlaceholder}
                                 onChangeText={(val) => {
+                                    onSearch(val)
                                     let result =  data.filter((item: L1Keys) => {
                                         val.toLowerCase();
                                         let row = item.value.toLowerCase()
