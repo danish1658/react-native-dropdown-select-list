@@ -113,8 +113,14 @@ export interface SelectListProps  {
     */
     closeicon?: JSX.Element,
 
+     /** 
+     * Changes the color of the chevron icon
+    */
     chevronColor?: string,
     
+    /** 
+     * Changes the size of the chevron icon
+    */
     chevronSize?: number,
 }
 
@@ -261,6 +267,16 @@ export interface MultipleSelectListProps  {
     * Additional styles for label
     */
     labelStyles?: TextStyle,
+
+    /** 
+     * Changes the color of the chevron icon
+    */
+    chevronColor?: string,
+    
+    /** 
+     * Changes the size of the chevron icon
+    */
+    chevronSize?: number,
 }
 
 declare class MultipleSelectList extends React.Component<MultipleSelectListProps> {}
