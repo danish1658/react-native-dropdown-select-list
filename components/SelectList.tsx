@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@rneui/base';
 import {
     View,
     Text,
@@ -37,7 +38,9 @@ const SelectList: React.FC<SelectListProps> =  ({
         onSelect = () => {},
         save = 'key',
         dropdownShown = false,
-        fontFamily
+        fontFamily,
+        chevronColor,
+        chevronSize,
     }) => {
 
     const oldOption = React.useRef(null)
@@ -47,6 +50,7 @@ const SelectList: React.FC<SelectListProps> =  ({
     const [height,setHeight] = React.useState<number>(200)
     const animatedvalue = React.useRef(new Animated.Value(0)).current;
     const [filtereddata,setFilteredData] = React.useState(data)
+    const [iconName, setIconName] = React.useState<string>("");
 
 
     const slidedown = () => {
@@ -174,10 +178,11 @@ const SelectList: React.FC<SelectListProps> =  ({
                         {
                             (!arrowicon)
                             ?
-                                <Image 
-                                    source={require('../assets/images/chevron.png')}
-                                    resizeMode='contain'
-                                    style={{width:20,height:20}}
+                                <Icon
+                                    name={dropdown ? 'chevron-up' : 'chevron-down'}
+                                    type='entypo'
+                                    color={chevronColor}
+                                    size={chevronSize}
                                 />
                             :
                                 arrowicon
@@ -261,3 +266,4 @@ const styles = StyleSheet.create({
     disabledoption:{ paddingHorizontal:20,paddingVertical:8,flexDirection:'row',alignItems:'center', backgroundColor:'whitesmoke',opacity:0.9}
 
 })
+
