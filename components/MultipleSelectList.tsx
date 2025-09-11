@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@rneui/base';
 import {
     View,
     Text,
@@ -44,7 +45,9 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
         badgeTextStyles,
         checkBoxStyles,
         save = 'key',
-        dropdownShown = false
+        dropdownShown = false,
+        chevronColor,
+        chevronSize,
     }) => {
 
     const oldOption = React.useRef(null)
@@ -191,10 +194,11 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
                         {
                             (!arrowicon)
                             ?
-                                <Image 
-                                    source={require('../assets/images/chevron.png')}
-                                    resizeMode='contain'
-                                    style={{width:20,height:20}}
+                                <Icon
+                                    name={dropdown ? 'chevron-up' : 'chevron-down'}
+                                    type='entypo'
+                                    color={chevronColor}
+                                    size={chevronSize}
                                 />
                             :
                                 arrowicon
