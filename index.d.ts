@@ -113,7 +113,7 @@ export interface SelectListProps  {
     */
     closeicon?: JSX.Element,
 
-     /** 
+    /** 
      * Changes the color of the chevron icon
     */
     chevronColor?: string,
